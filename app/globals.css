@@ -1,0 +1,49 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark body {
+  @apply bg-dark text-white;
+}
+
+body {
+  @apply bg-light text-dark;
+}
+
+/* Glassmorphism Effect */
+.glassmorphic {
+  @apply backdrop-blur-md bg-white/10 border border-white/20;
+}
+
+.dark .glassmorphic {
+  @apply bg-white/5 border border-white/10;
+}
+
+/* Smooth animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+}
